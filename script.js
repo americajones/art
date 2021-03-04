@@ -2,7 +2,7 @@ var toggleBox = document.querySelector(".toggle");
 var galleryBox = document.querySelector(".gallery");
 var picBox = document.querySelector(".pic-box");
 var bg = document.querySelector("body");
-var clickname = document.querySelector(".main");
+var clickname = document.querySelector(".name");
 
 //if toggle clicked, change bg colors
 function nightDayToggle() {
@@ -32,6 +32,13 @@ const mainImages = [
     tagged: ["portfolio", "editorial", "msj"],
   },
   {
+    name: "heros",
+    url: "images/IMG_5191.JPG",
+    description: "digi poster",
+    year: "2019",
+    tagged: ["portfolio", "fanart"],
+  },
+  {
     name: "heliophagus 1",
     url: "images/5.jpg",
     description: "digi",
@@ -53,8 +60,8 @@ const mainImages = [
     tagged: ["portfolio", "editorial", "msj"],
   },
   {
-    name: "heros",
-    url: "images/IMG_5191.JPG",
+    name: "juicy peach",
+    url: "images/IMG_7496.JPG",
     description: "digi poster",
     year: "2019",
     tagged: ["portfolio", "fanart"],
@@ -87,13 +94,7 @@ const mainImages = [
     year: "2019",
     tagged: ["portfolio", "sketchbook"],
   },
-  {
-    name: "juicy peach",
-    url: "images/IMG_7496.JPG",
-    description: "digi poster",
-    year: "2019",
-    tagged: ["portfolio", "fanart"],
-  },
+
   {
     name: "hannibal poster",
     url: "images/hannibal2low.jpg",
@@ -266,13 +267,6 @@ function displayMain() {
     picBox.append(imageBox);
   });
 }
-//load on main page only
-if (document.title == "America Jones Portfolio") {
-  displayMain();
-}
-if (document.title == "America Jones Archive") {
-  displayAll();
-}
 
 var coversDiv = document.querySelector(".covers");
 var stampsDiv = document.querySelector(".stamps");
@@ -322,20 +316,25 @@ function displayTories() {
     picBox.append(imageBox);
   });
 }
-
-clickname.addEventListener("click", function () {
+//load on main page only
+if (document.title == "America Jones Portfolio") {
   displayMain();
-});
-coversDiv.addEventListener("click", function () {
-  displayCovers();
-});
-stampsDiv.addEventListener("click", function () {
-  displayStamps();
-});
-torialsDiv.addEventListener("click", function () {
-  displayTories();
-});
-
+  clickname.addEventListener("click", function () {
+    displayMain();
+  });
+  coversDiv.addEventListener("click", function () {
+    displayCovers();
+  });
+  stampsDiv.addEventListener("click", function () {
+    displayStamps();
+  });
+  torialsDiv.addEventListener("click", function () {
+    displayTories();
+  });
+}
+if (document.title == "America Jones Archive") {
+  displayAll();
+}
 //archive filters:
 
 function displayAll() {
@@ -390,4 +389,44 @@ function displaySketches() {
     imageBox.src = pic.url;
     picBox.append(imageBox);
   });
+}
+
+//full screen overlay things
+var pics = document.querySelectorAll(".pic");
+var overlay = document.querySelector("#Fullscreen");
+
+var fullImg = document.createElement("img");
+pics.forEach((item) => {
+  item.addEventListener("click", function () {
+    fullImg.src = item.src;
+    console.log(this);
+    overlay.append(fullImg);
+    overlay.style.visibility = "visible";
+  });
+});
+
+overlay.addEventListener("click", function () {
+  overlay.style.visibility = "hidden";
+});
+
+//Get the button:
+var mybutton = document.querySelector(".myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }

@@ -10,27 +10,32 @@
   </head>
   <body>
     <div class="navigation">
-      <div class="main">
-        <h1>America</h1>
-        <h1>Jones</h1>
+      <div class="header">
+        <h1 class="name">America Jones</h1>
         <h3>artist</h3>
-      </div>
-      <div class="nav-links">
-        <ul>
-          <li><a class="covers" href="#">covers</a></li>
-          <li><a class="stamps" href="#">stamps</a></li>
-          <li><a class="editorials" href="#">editorials</a></li>
-          <!-- <li><a class="internetart" href="#">internet art</a></li> -->
-          <li><a class="archive" href="archive.html">archive</a></li>
-        </ul>
-      </div>
-      <!-- <div class="nav-buttons">
-        <div class="instagram">ig</div>
-        <div class="rss">rss</div>
-        <div class="twitter">
-          <a href="https://twitter.com/americajonesart">tw</a>
+        <div class="nav-buttons">
+          <div class="instagram">
+            <a href="https://www.instagram.com/404america_jones/">
+              <img
+                src="images/instagram-icon-circle.jpg"
+                alt="artist's instagram"
+            /></a>
+          </div>
+          <!-- <div class="rss">rss</div> -->
+          <div class="twitter">
+            <a href="https://twitter.com/americajonesart"
+              ><img src="images/twitter_circle.png" alt="artist's twitter"
+            /></a>
+          </div>
         </div>
-      </div> -->
+      </div>
+      <ul class="nav-links">
+        <li><a class="covers" href="#">covers</a></li>
+        <li><a class="stamps" href="#">stamps</a></li>
+        <li><a class="editorials" href="#">editorials</a></li>
+        <!-- <li><a class="internetart" href="#">internet art</a></li> -->
+        <li><a class="archive" href="archive.html">archive</a></li>
+      </ul>
     </div>
     <div class="gallery">
       <div class="pic-info"></div>
@@ -43,6 +48,8 @@
         <span class="slider round"></span>
       </label>
     </div>
+    <button onclick="topFunction()" class="myBtn" title="Go to top">top</button>
+    <div id="Fullscreen"></div>
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
