@@ -197,11 +197,10 @@ input:checked + .slider:before {
   z-index: 4; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: rgb(179, 255, 0); /* Set a background color */
+  background-color: #95d16a; /* Set a background color */
   color: rgb(0, 0, 0); /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 11px; /* Some padding */
-  border-radius: 24px; /* Rounded corners */
+  padding: 11px 16px; /* Some padding */
   font-size: 18px; /* Increase font size */
 }
 
