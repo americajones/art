@@ -6,7 +6,7 @@ body {
   flex-direction: column;
   justify-content: start;
   color: #ed5b63;
-  font-family: "Courier";
+  font-family: 'Courier';
 }
 body.day-background h1 {
   color: teal;
@@ -30,7 +30,8 @@ body.day-background {
   right: 0;
   bottom: 0;
   left: 0;
-  background: transparent url("images/trans-black-tile.png") repeat;
+  background: transparent url('images/trans-black-tile.png') repeat;
+  backdrop-filter: blur(6px);
   display: flex;
   text-align: center;
   align-items: center;
@@ -157,7 +158,7 @@ li {
 }
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 18px;
   width: 18px;
   left: 4px;
