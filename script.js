@@ -284,6 +284,11 @@ function displayCovers() {
     imageBox.classList.add("pic");
     imageBox.src = pic.url;
     picBox.append(imageBox);
+    imageBox.addEventListener("click", function () {
+      fullImg.src = this.src;
+      overlay.append(fullImg);
+      overlay.style.visibility = "visible";
+    });
   });
 }
 
@@ -299,6 +304,11 @@ function displayStamps() {
     imageBox.classList.add("pic");
     imageBox.src = pic.url;
     picBox.append(imageBox);
+    imageBox.addEventListener("click", function () {
+      fullImg.src = this.src;
+      overlay.append(fullImg);
+      overlay.style.visibility = "visible";
+    });
   });
 }
 
@@ -314,6 +324,11 @@ function displayTories() {
     imageBox.classList.add("pic");
     imageBox.src = pic.url;
     picBox.append(imageBox);
+    imageBox.addEventListener("click", function () {
+      fullImg.src = this.src;
+      overlay.append(fullImg);
+      overlay.style.visibility = "visible";
+    });
   });
 }
 //load on main page only
@@ -345,49 +360,69 @@ function displayAll() {
     imageBox.classList.add("pic");
     imageBox.src = mainImages[i].url;
     picBox.append(imageBox);
+    imageBox.addEventListener("click", function () {
+      fullImg.src = this.src;
+      overlay.append(fullImg);
+      overlay.style.visibility = "visible";
+    });
   }
 }
 
 function displayDigital() {
   picBox.textContent = "";
-  const torials = mainImages.filter(function (e) {
+  const digis = mainImages.filter(function (e) {
     if (e.description.includes("digi")) {
       return e;
     }
   });
-  torials.forEach((pic) => {
+  digis.forEach((pic) => {
     var imageBox = document.createElement("img");
     imageBox.classList.add("pic");
     imageBox.src = pic.url;
     picBox.append(imageBox);
+    imageBox.addEventListener("click", function () {
+      fullImg.src = this.src;
+      overlay.append(fullImg);
+      overlay.style.visibility = "visible";
+    });
   });
 }
 function displayTraditional() {
   picBox.textContent = "";
-  const torials = mainImages.filter(function (e) {
+  const tradies = mainImages.filter(function (e) {
     if (e.description.includes("trad")) {
       return e;
     }
   });
-  torials.forEach((pic) => {
+  tradies.forEach((pic) => {
     var imageBox = document.createElement("img");
     imageBox.classList.add("pic");
     imageBox.src = pic.url;
     picBox.append(imageBox);
+    imageBox.addEventListener("click", function () {
+      fullImg.src = this.src;
+      overlay.append(fullImg);
+      overlay.style.visibility = "visible";
+    });
   });
 }
 function displaySketches() {
   picBox.textContent = "";
-  const covers = mainImages.filter(function (e) {
+  const sketches = mainImages.filter(function (e) {
     if (e.tagged.includes("sketchbook")) {
       return e;
     }
   });
-  covers.forEach((pic) => {
+  sketches.forEach((pic) => {
     var imageBox = document.createElement("img");
     imageBox.classList.add("pic");
     imageBox.src = pic.url;
     picBox.append(imageBox);
+    imageBox.addEventListener("click", function () {
+      fullImg.src = this.src;
+      overlay.append(fullImg);
+      overlay.style.visibility = "visible";
+    });
   });
 }
 
